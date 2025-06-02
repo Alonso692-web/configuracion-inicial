@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Ejecutar GoogleNet
+Exec=lxterminal -t "Ejecución GoogleNet" --geometry=80x24 -e /bin/bash -c '/home/pi/run_googlenet.sh; bash'
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+StartupNotify=true
+Comment=Ejecuta el modelo GoogleNet Prueba8
