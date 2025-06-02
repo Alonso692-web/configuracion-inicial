@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Inicializar Conda
+source /home/Guille/forgeconda3/etc/profile.d/conda.sh
+
+# Activar entorno virtual
+conda activate guilletorch
+
+# Si falla la activación, mostrar información de entornos
+if [ $? -ne 0 ]; then
+    echo "Error activando el entorno. Entornos disponibles:"
+    conda env list
+    read -p "Presiona Enter para cerrar..."
+    exit 1
+fi
+
+# Navegar y ejecutar
+cd /home/pi/googlenet-pesos || exit
+python modelo_googlenet_prueba8.py
+
+# Mantener ventana abierta
+read -p "Presiona Enter para cerrar..."
+
+
+##########################################
+#!/bin/bash
+source /home/pi/miniconda3/etc/profile.d/conda.sh
+conda activate guilletorch
+
+# Usar el Python específico del entorno
+/home/pi/miniconda3/envs/guilletorch/bin/python /home/pi/googlenet-pesos/modelo_googlenet_prueba8.py
+
+read -p "Presiona Enter para cerrar..."
